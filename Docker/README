@@ -15,4 +15,34 @@ docker run -d --init \
 
 
 
+   36  mkdir -p unifi/data
+   37  mkdir -p unifi/log
+   38  docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -e TZ='Africa/Johannesburg' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
+   39  sudo systemctl start docker
+   40  docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -e TZ='Africa/Johannesburg' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
+   41  docker run --rm --init -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -e TZ='Africa/Johannesburg' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable --net=host
+   42  docker run --rm --init --net=host -p 8080:8080 -p 8443:8443 -p 3478:3478/udp -e TZ='Africa/Johannesburg' -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
    
+   
+   43  docker ps
+   44  docker run -d --init --net=host -v ~/unifi:/unifi --name unifi jacobalberty/unifi:stable
+   45  docker ps
+   46  uptime
+   47  docker ps
+   48  ip a
+   49  docker ps
+   50  docker stop ef7d2888a805
+   51  docker start ef7d2888a805
+   52  docker logs ef7d2888a805
+   53  firewall-cmd --list all-zones
+   54  firewall-cmd --list-all-zones
+   55  firewall-cmd --list-active-zones
+   56  firewall-cmd --get-active-zones
+   57  tcpdump -i enp3s0 port not 22
+   58  tcpdump -nn -i enp3s0 port not 22
+   59  firewall-cmd --list-active-zones
+   60  firewall-cmd --get-active-zones
+   61  systemctl status firewalld
+   62  systemctl stop firewalld
+   63  -m
+   64  history
